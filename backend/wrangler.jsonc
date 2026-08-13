@@ -1,45 +1,20 @@
 {
 	"$schema": "node_modules/wrangler/config-schema.json",
-	"name": "backend",
+	"name": "task-manager",
 	"main": "src/index.ts",
 	"compatibility_date": "2026-08-13",
+  
+	"assets": {
+	  "directory": "../frontend/dist",
+	  "not_found_handling": "single-page-application",
+	  "run_worker_first": ["/api/*"]
+	},
+  
 	"d1_databases": [
-		{
-			"binding": "task_manager_db",
-			"database_name": "task-manager-db",
-			"database_id": "9c572b4a-5219-4d92-92f3-b3b5e6b40dd5"
-		}
+	  {
+		"binding": "task_manager_db",
+		"database_name": "task-manager-db",
+		"database_id": "9c572b4a-5219-4d92-92f3-b3b5e6b40dd5"
+	  }
 	]
-	// "compatibility_flags": [
-	//   "nodejs_compat"
-	// ],
-	// "vars": {
-	//   "MY_VAR": "my-variable"
-	// },
-	// "kv_namespaces": [
-	//   {
-	//     "binding": "MY_KV_NAMESPACE",
-	//     "id": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-	//   }
-	// ],
-	// "r2_buckets": [
-	//   {
-	//     "binding": "MY_BUCKET",
-	//     "bucket_name": "my-bucket"
-	//   }
-	// ],
-	// "d1_databases": [
-	//   {
-	//     "binding": "MY_DB",
-	//     "database_name": "my-database",
-	//     "database_id": ""
-	//   }
-	// ],
-	// "ai": {
-	//   "binding": "AI"
-	// },
-	// "observability": {
-	//   "enabled": true,
-	//   "head_sampling_rate": 1
-	// }
-}
+  }
